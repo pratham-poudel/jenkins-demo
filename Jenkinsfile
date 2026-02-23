@@ -31,9 +31,9 @@ pipeline {
             }
         }
         
-        stage('Archive') {
+        stage('Deploy to Nexus') {
             steps {
-                archiveArtifacts artifacts: 'target/*.jar'
+                bat 'mvn deploy'
             }
         }
     }
